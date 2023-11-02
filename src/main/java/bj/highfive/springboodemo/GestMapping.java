@@ -4,4 +4,6 @@ public @interface GestMapping {
 
     String value();
 
+    String path();
+
 }
