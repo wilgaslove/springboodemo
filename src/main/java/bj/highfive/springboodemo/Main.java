@@ -17,8 +17,6 @@ public class Main {
 	}
 	
 
-	
-
 	//@RequestMapping(path = "/hello", method = RequestMethod.POST) le 1
 	@GestMapping("/albums") // le deux. le 1 et le 2 font la même chose
 	public List<Album> getAlbums(){

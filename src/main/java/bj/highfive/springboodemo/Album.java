@@ -114,6 +114,11 @@ public class Album {
         }
 
         @Override
+        public int hashCode() {
+            return Objects.hash(this.id, this.name, this.title);
+        }
+
+        @Override
 	public String toString() {
 		return "Album {" + ": "+ this.id +", name: " + this.name + "}";
 	}

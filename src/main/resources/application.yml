@@ -1,2 +1,9 @@
-# server:
-#   port: 9876
+server:
+  port: 5000
+
+spring:
+  datasource:
+    url:
+    username:
+    password:
+    driver-class-name:

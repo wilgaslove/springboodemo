@@ -9,7 +9,7 @@ Lorsqu'une classe est annotée avec `@RestController`, Spring considère que cha
 Cette méthode permet de comparer l'objet courant avec un autre objet passé en argument pour déterminer s'ils sont égaux ou non.
 
 ### hashCode()
-Cette méthode retourne un code de hachage entier pour l'objet.
+Cette méthode retourne un code de hachage (numéro calculé à partir des valeurs internes de l'objet) entier pour l'objet. Il es important que si deux objets sont égaux selon la méthode `equales()`, Ils aient le même code de hachage.
 
 
 ### toString()
