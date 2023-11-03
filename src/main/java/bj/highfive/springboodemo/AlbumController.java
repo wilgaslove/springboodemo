@@ -1,21 +1,19 @@
 package bj.highfive.springboodemo;
-
-
-
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller // ceci signifie que cette classe est un controlleur
+@CrossOrigin(origins = "http://localhost:4200")// connexion à l'application angular backend
 @RequestMapping(path = "/api") // ceci signifie que l'url commence par /api (après l'url de l'application)
 public class AlbumController {
     @Autowired // Ceci demande à Java d'injecter le "bean" userRepository
@@ -40,9 +38,15 @@ public class AlbumController {
         return this.albumRepository.findAll();
     }
 
+    /*
+     * RequestParameter: monsite.fr?id=1
+     * PathVariable: monsite.fr/1
+     * RequestBody
+     * ResponseBody
+     */
 
     @GetMapping("/albums/{id}")
-    public @ResponseBody Album getAlbumById(@RequestParam Long id){
+    public @ResponseBody Album getAlbumById(@PathVariable Long id){
         return this.albumRepository.findById(id).orElse(null);
     }
 
@@ -66,7 +70,7 @@ public class AlbumController {
 
     // Delete
     @DeleteMapping("/albums/{id}")
-    public @ResponseBody String deleteAlbum(@RequestParam Long id) {
+    public @ResponseBody String deleteAlbum(@PathVariable Long id) {
         this.albumRepository.deleteById(id);
         return "Album supprimé: " + id;
     }

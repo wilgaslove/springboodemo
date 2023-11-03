@@ -1,0 +1,164 @@
+[
+    {
+    "ref": "rap",
+    "name": "Les rouage de l'amour",
+    "title": "En feu" ,
+    "description": "Denier album 2023" ,
+    "duration": 7200 ,
+    "status": "Most played" ,
+    "url": "https://example.com",
+    "tags": ["amour", "Zouk", "sensationnel"],
+    "like": "Most"
+    },
+    {
+        "ref": "Pop",
+        "name": "Les rouages de l'amour",
+        "title": "En feu",
+        "description": "Dernier album 2023...",
+        "duration": 7200,
+        "status": "Most played",
+        "url": "https://example.com/album1",
+        "tags": [
+          "amour",
+          "zouk",
+          "sensationnel"
+        ],
+        "like": "Most"
+      },
+      {
+        "ref": "Rock",
+        "name": "Sons de la liberté",
+        "title": "Revolution",
+        "description": "Engageant des thèmes politiques et sociaux...",
+        "duration": 6600,
+        "status": "Popular",
+        "url": "https://example.com/album2",
+        "tags": [
+          "révolution",
+          "rock",
+          "protestation"
+        ],
+        "like": "Most"
+      },
+      {
+        "ref": "Rap",
+        "name": "Vers l'infini",
+        "title": "Réalité urbaine",
+        "description": "Parle de la vie dans les rues de la ville...",
+        "duration": 7800,
+        "status": "Recommended",
+        "url": "https://example.com/album3",
+        "tags": [
+          "urbain",
+          "rap",
+          "vie citadine"
+        ],
+        "like": "Most"
+      },
+      {
+        "ref": "Electronique",
+        "name": "Fréquences synthétiques",
+        "title": "Rétro futuriste",
+        "description": "Inspiré par les sons électroniques des années 80...",
+        "duration": 6900,
+        "status": "Trending",
+        "url": "https://example.com/album4",
+        "tags": [
+          "électronique",
+          "rétronique",
+          "futurisme"
+        ],
+        "like": "Most"
+      },
+      {
+        "ref": "Jazz",
+        "name": "Nuances de bleu",
+        "title": "Improvisations",
+        "description": "Exploration musicale à travers l'improvisation...",
+        "duration": 8000,
+        "status": "Recommended",
+        "url": "https://example.com/album5",
+        "tags": [
+          "jazz",
+          "improvisation",
+          "expérimental"
+        ],
+        "like": "Most"
+      },
+      {
+        "ref": "Classique",
+        "name": "Symphonie du destin",
+        "title": "Émotions orchestrales",
+        "description": "Une symphonie épique évoquant diverses émotions...",
+        "duration": 8400,
+        "status": "Most played",
+        "url": "https://example.com/album6",
+        "tags": [
+          "classique",
+          "symphonie",
+          "émotion"
+        ],
+        "like": "Most"
+      },
+      {
+        "ref": "Reggae",
+        "name": "Vibes positives",
+        "title": "Amour et paix",
+        "description": "Messages d'amour et d'unité à travers des rythmes reggae...",
+        "duration": 7500,
+        "status": "Popular",
+        "url": "https://example.com/album7",
+        "tags": [
+          "reggae",
+          "amour",
+          "paix"
+        ],
+        "like": "Most"
+      },
+      {
+        "ref": "Blues",
+        "name": "Âme errante",
+        "title": "Mélancolie du delta",
+        "description": "Chants mélancoliques accompagnés de guitares blues...",
+        "duration": 7200,
+        "status": "Trending",
+        "url": "https://example.com/album8",
+        "tags": [
+          "blues",
+          "mélancolie",
+          "delta"
+        ],
+        "like": "Most"
+      },
+      {
+        "ref": "Country",
+        "name": "Routes poussiéreuses",
+        "title": "Voyage américain",
+        "description": "Récits de voyages à travers les vastes plaines américaines...",
+        "duration": 7800,
+        "status": "Recommended",
+        "url": "https://example.com/album9",
+        "tags": [
+          "country",
+          "voyage",
+          "amérique"
+        ],
+        "like": "Most"
+      },
+      {
+        "ref": "Hip-Hop",
+        "name": "Esprits urbains",
+        "title": "Poésie de la rue",
+        "description": "Exploration des réalités urbaines à travers des paroles percutantes...",
+        "duration": 8100,
+        "status": "Popular",
+        "url": "https://example.com/album10",
+        "tags": [
+          "hip-hop",
+          "poésie",
+          "vie urbaine"
+        ],
+        "like": "Most"
+      }
+    
+    ]
