@@ -16,6 +16,3 @@ Cette méthode retourne un code de hachage (numéro calculé à partir des valeu
 
 Cette méthode retourne une chaîne de caractyres représentant l'objet. Il est recommandé de redéfinir cette méthode dasn nos classes pour retourner une représentation plus siginicative de l'objet.
 
-## Bean 
-Un bean est l'instance d'une classe qui est automatiquement gérer par Java.
-
