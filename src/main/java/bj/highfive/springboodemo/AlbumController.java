@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller // ceci signifie que cette classe est un controlleur
 @RequestMapping(path = "/api") // ceci signifie que l'url commence par /api (après l'url de l'application)
@@ -20,33 +23,33 @@ public class AlbumController {
 
     //Create
     @PostMapping("/album")
-    public Album createAlbum(Album album){
+    public @ResponseBody Album createAlbum(@RequestBody Album album){
         return this.albumRepository.save(album);
     }
 
     @PostMapping("/albums")
-    public Iterable<Album> createAlbum(List<Album> albums){
+    public @ResponseBody Iterable<Album> createAlbum(@RequestBody List<Album> albums){
         return this. albumRepository.saveAll(albums);
     }
 
     //Read
     // @RequestMapping(path = "/hello", method = RequestMethod.POST) le 1
     @GetMapping(path = "/albums") // le deux. le 1 et le 2 font la même chose
-    public Iterable<Album> getAlbums() {
+    public @ResponseBody Iterable<Album> getAlbums() {
         // localhost:1234/api/albums
         return this.albumRepository.findAll();
     }
 
 
     @GetMapping("/albums/{id}")
-    public Album getAlbumById(Long id){
+    public @ResponseBody Album getAlbumById(@RequestParam Long id){
         return this.albumRepository.findById(id).orElse(null);
     }
 
 
     //Update 
     @PutMapping("/albums")
-    public Album updAlbum(Album album) {
+    public @ResponseBody Album updAlbum(@RequestBody Album album) {
         Album existingAlbum = this.albumRepository.findById(album.getId()).orElse(null);
         existingAlbum.setRef(album.getRef());
         existingAlbum.setName(album.getName());
@@ -62,8 +65,8 @@ public class AlbumController {
     }
 
     // Delete
-    @DeleteMapping("/albums/{album.id}")
-    public String deleteAlbum(Long id) {
+    @DeleteMapping("/albums/{id}")
+    public @ResponseBody String deleteAlbum(@RequestParam Long id) {
         this.albumRepository.deleteById(id);
         return "Album supprimé: " + id;
     }
