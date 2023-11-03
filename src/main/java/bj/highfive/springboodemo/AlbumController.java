@@ -6,7 +6,10 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller // ceci signifie que cette classe est un controlleur
@@ -16,11 +19,12 @@ public class AlbumController {
     AlbumRepository albumRepository;
 
     //Create
+    @PostMapping("/album")
     public Album createAlbum(Album album){
         return this.albumRepository.save(album);
     }
 
-
+    @PostMapping("/albums")
     public Iterable<Album> createAlbum(List<Album> albums){
         return this. albumRepository.saveAll(albums);
     }
@@ -34,13 +38,14 @@ public class AlbumController {
     }
 
 
+    @GetMapping("/albums/{id}")
     public Album getAlbumById(Long id){
         return this.albumRepository.findById(id).orElse(null);
     }
 
 
     //Update 
-
+    @PutMapping("/albums")
     public Album updAlbum(Album album) {
         Album existingAlbum = this.albumRepository.findById(album.getId()).orElse(null);
         existingAlbum.setRef(album.getRef());
@@ -57,7 +62,11 @@ public class AlbumController {
     }
 
     // Delete
+    @DeleteMapping("/albums/{album.id}")
+    public String deleteAlbum(Long id) {
+        this.albumRepository.deleteById(id);
+        return "Album supprimé: " + id;
+    }
 
-    
  
 }

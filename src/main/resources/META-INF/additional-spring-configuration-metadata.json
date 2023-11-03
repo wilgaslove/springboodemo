@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "spring.show-sql",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.show-sql'"
+  },
+  {
+    "name": "spring.datasource.ddl-auto",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.ddl-auto'"
+  },
+  {
+    "name": "spring.datasource.show-sql",
+    "type": "java.lang.String",
+    "description": "A description for 'spring.datasource.show-sql'"
+  }
+]}
