@@ -1,11 +1,12 @@
 package bj.highfive.springboodemo;
 
-import java.util.Arrays;
+
+
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller // ceci signifie que cette classe est un controlleur
@@ -14,30 +15,49 @@ public class AlbumController {
     @Autowired // Ceci demande à Java d'injecter le "bean" userRepository
     AlbumRepository albumRepository;
 
+    //Create
+    public Album createAlbum(Album album){
+        return this.albumRepository.save(album);
+    }
+
+
+    public Iterable<Album> createAlbum(List<Album> albums){
+        return this. albumRepository.saveAll(albums);
+    }
+
+    //Read
     // @RequestMapping(path = "/hello", method = RequestMethod.POST) le 1
-    @GestMapping(path = "/albums") // le deux. le 1 et le 2 font la même chose
+    @GetMapping(path = "/albums") // le deux. le 1 et le 2 font la même chose
     public Iterable<Album> getAlbums() {
         // localhost:1234/api/albums
         return this.albumRepository.findAll();
     }
 
-    private List<Album> generateAlbums() {
-        // Pour le simpliscité, on retourne un tableau vide
-        Album album1 = new Album("Zouk", "Les rouages de l'amour", "Mr Love", "...", 3000, "true",
-                "https://love.com/album1", Arrays.asList("Love", "good"), "like");
 
-        Album album2 = new Album("Zouk", "Les rouages de l'amour", "Mr Love", "...", 3000, "true",
-                "https://love.com/album1", Arrays.asList("Love", "good"), "like");
-
-        Album album3 = new Album("Zouk", "Les rouages de l'amour", "Mr Love", "...", 3000, "true",
-                "https://love.com/album1", Arrays.asList("Love", "good"), "like");
-
-        Album album4 = new Album("Zouk", "Les rouages de l'amour", "Mr Love", "...", 3000, "true",
-                "https://love.com/album1", Arrays.asList("Love", "good"), "like");
-
-        System.out.println(album1);
-
-        return Arrays.asList(album1, album2, album3, album4);
+    public Album getAlbumById(Long id){
+        return this.albumRepository.findById(id).orElse(null);
     }
 
+
+    //Update 
+
+    public Album updAlbum(Album album) {
+        Album existingAlbum = this.albumRepository.findById(album.getId()).orElse(null);
+        existingAlbum.setRef(album.getRef());
+        existingAlbum.setName(album.getName());
+        existingAlbum.setTitle(album.getTitle());
+        existingAlbum.setDescription(album.getDescription());
+        existingAlbum.setDuration(album.getDuration());
+        existingAlbum.setStatus(album.getStatus());
+        existingAlbum.setUrl(album.getUrl());
+        existingAlbum.setTags(album.getTags());
+        existingAlbum.setLike(album.getLike());
+
+        return this.albumRepository.save(existingAlbum);
+    }
+
+    // Delete
+
+    
+ 
 }
