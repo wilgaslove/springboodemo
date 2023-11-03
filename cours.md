@@ -18,3 +18,4 @@ Cette méthode retourne une chaîne de caractyres représentant l'objet. Il est 
 
 ## Bean 
 Un bean est l'instance d'une classe qui est automatiquement gérer par Java.
+
