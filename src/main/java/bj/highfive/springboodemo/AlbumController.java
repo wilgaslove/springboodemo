@@ -50,7 +50,6 @@ public class AlbumController {
         return this.albumRepository.findById(id).orElse(null);
     }
 
-
     //Update 
     @PutMapping("/albums")
     public @ResponseBody Album updAlbum(@RequestBody Album album) {
@@ -74,6 +73,4 @@ public class AlbumController {
         this.albumRepository.deleteById(id);
         return "Album supprimé: " + id;
     }
-
- 
 }
